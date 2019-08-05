@@ -18,3 +18,4 @@ for t in range(int(input())):
             break
             
     print('#{0} {1} {2}'.format(t+1, result, my_max(data_list)))
+    
