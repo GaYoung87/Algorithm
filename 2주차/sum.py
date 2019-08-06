@@ -20,3 +20,36 @@ for t in range(10):
     result += [sum_num_l, sum_num_r]
 
     print('#{0} {1}'.format(n, max(result)))
+
+
+# 값을 저장하지 말고, 이미 저장되어있던 max값과 비교해서 갈아엎기!!
+# import sys
+# sys.stdin = open("input.txt", "r")
+
+for tc in range(1, 11):
+    n = int(input())
+    array = [list(map(int, input().split())) for _ in range(100)]
+
+    max = sum = 0
+    for i in range(100):
+        for j in range(100):
+            sum += array[i][j]
+        if max < sum : max = sum
+        sum = 0
+
+    for i in range(100):
+        for j in range(100):
+            sum += array[j][i]
+        if max < sum : max = sum
+        sum = 0
+
+    for i in range(100):
+        sum += array[i][i]
+        if max < sum: max = sum
+        sum = 0
+
+    for i in range(100):
+        sum += array[i][99 - i]
+        if max < sum: max = sum
+
+    print("#%d %d" %(tc, max))
