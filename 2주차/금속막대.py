@@ -19,5 +19,5 @@ for t in range(int(input())):   # 10
     print(f'#{t+1}', end=' ')
     for j in result:
         print(f'{j[0]} {j[1]}', end=' ')
-    print(' ')
+    print()
 
