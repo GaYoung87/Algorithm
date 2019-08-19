@@ -36,7 +36,7 @@
 
 # 알고리즘
 text = 'an algorithm pattern matching algorithm'
-part = 'rithm'
+part =        'rithm'
 
 def bm_algo(text, pattern):
     i = len(text)
@@ -50,7 +50,7 @@ def bm_algo(text, pattern):
         if text[text_index] == pattern[pattern_index]:
             if pattern_index == 0:
                 count += 1
-                text_index = text_index + j + 1
+                text_index = text_index + j
                 pattern_index = j - 1
             else:
                 text_index -= 1
@@ -70,3 +70,4 @@ def bm_algo(text, pattern):
     return count
 
 print(bm_algo(text, part))
+ 
