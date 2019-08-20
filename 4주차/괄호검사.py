@@ -33,13 +33,13 @@ for i in range(len(str_)):
         top += 1
         stack[top] = str[i]
         print(stack)
-#     elif str[i] == '(':  # pop
-#         if top == -1:
-#             correct = False
-#             break
-#         top -= 1
+    elif str[i] == '(':  # pop
+        if top == -1:
+            correct = False
+            break
+        top -= 1
 
-# if top == -1 and correct:
-#     print('Correct!')
-# else:
-#     print('Wrong..')
+if top == -1 and correct:
+    print('Correct!')
+else:
+    print('Wrong..')
