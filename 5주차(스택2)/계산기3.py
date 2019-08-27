@@ -8,32 +8,57 @@ def calc(x, y, eq):
     elif eq == '/':
         return x // y
 
-def priority(word):
-    if word == "*" or word == "/":
-        return 2
-    elif word == "+" or word == "-":
-        return 1
-    elif word == "(" or word == ")":
-        return 0
-    return -1
+# stack 안에서의 우선순위
+isp = {'*': 2, '/': 2, '+': 1, '-': 1, '(': 0}
+# stack 밖에서의 우선순위
+icp = {'*': 2, '/': 2, '+': 1, '-': 1, '(': 3}
 
-for t in range(1):
+for t in range(10):
     N = int(input())
     data = input()
-    number = ''
+    number = []
     stack = []
     # print(data)
-    for num in data:
-        if '0' <= num <= '9':
-            number.append(int(num))
+    for i in data:
+        if '0' <= i <= '9':
+            number.append(int(i))
         else:
-            if num == '(':
+            if i == '(':
                 stack.append('(')
-            elif num == ')':
+            elif i == ')':
                 while True:
-                    ch = stack.pop()
-                    if ch == '(':
+                    j = stack.pop()
+                    if j == '(':
                         break
-                    number.append(ch)
-            
-            
+                    number.append(j)
+            else:
+                if stack:
+                    if isp[stack[-1]] > icp[i]:
+                        k = stack[-1]
+                        while isp[k] > icp[i]:
+                            number.append(stack.pop())
+                            if not stack:
+                                break
+                            k = stack[-1]
+                        stack.append(i)
+                    else:
+                        stack.append(i)        
+                else:
+                    stack.append(i)
+    # print(stack)
+    # print(number)
+
+    for _ in range(len(stack)):
+        number.append(stack.pop())
+
+    result = 0
+    stack2 = []
+    for num in number:
+        if type(num) == int:
+            stack2.append(num)
+        else:
+            b = int(stack2.pop())
+            a = int(stack2.pop())
+            stack2.append(calc(a, b, num))
+
+    print('#{} {}'.format(t+1, calc(a, b, num)))
