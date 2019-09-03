@@ -32,4 +32,3 @@ for t in range(int(input())):
                         # result = cnt
     print(result)
     # print('#{} {}'.format(t+1, result))
-
