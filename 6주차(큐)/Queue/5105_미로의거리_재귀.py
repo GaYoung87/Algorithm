@@ -8,7 +8,7 @@ def go(ls, dist=0):
                     a = go([x+dx, y+dy], dist+1)
                     if a[0] == 1:
                         return 1, a[1]
-                    elif a[0] == 1:
+                    elif a[0] == 0:
                         return 0, 0
                 elif bd[x+dx][y+dy] == 3:
                     return 1, dist
