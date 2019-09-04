@@ -29,7 +29,7 @@ for t in range(int(input())):
                         xi = xi + a
                         yi = yi + b
                         cnt += 1
-                        if 0 < xi < N and 0 < yi < N and board[yi][xi] == 0:
+                        if xi < 0 or xi >= N or yi < 0 or yi >= N or board[yi][xi] == 0:
                             cnt = 0
                             break
                     xi = x + a
