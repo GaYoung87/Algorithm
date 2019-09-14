@@ -1,20 +1,4 @@
-4
-CBBCBAAB
-CCCBABCB
-CAAAACAB
-BACCCCAC
-ABCBBAC
-ACAACABC
-BCCBAABC
-ABBBCCAA
-
-
-5
-CBCABBAC
-BBABCCBA
-ABCBCCCA
-BACCAABB
-BCBCACBC
-CABACACB
-CAAACCAB
-CBABACAC
+3
+print('{} {}'.format(1, 2))
+N, M = map(int, input().split())
+print('#{} {}'.format(tc, find())
