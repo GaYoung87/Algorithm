@@ -7,11 +7,13 @@ for t in range(int(input())):
         if word[i] == '(' or word[i] == '{':
             stack.append(word[i])
         elif word[i] == ')' and stack:
-            if stack[-1] == '(':
-                stack.pop()
+            a = stack.pop()
+            if a != '(':
+                result = 0
         elif word[i] == '}' and stack:
-            if stack[-1] == '{':
-                stack.pop()
+            a = stack.pop()
+            if a != '{':
+                result = 0
         elif word[i] == ')' and not stack:
             result = 0
         elif word[i] == '}' and not stack:
