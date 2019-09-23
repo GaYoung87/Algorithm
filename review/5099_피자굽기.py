@@ -10,22 +10,18 @@ for t in range(int(input())):
     for n in range(N):
         queue.append(pizza_ls.pop(0))
 
-    i = 0
+
     while queue:
-        if queue[i][1] // 2 != 0:
-            if len(queue) == 1:
+        if queue[0][1] // 2 != 0:
+            if len(queue) == 1:  # queue[0][1] // 2 != 0인 queue가 하나들어있을 때, 그것이 마지막 피자가 된다.
                 a = queue.pop(0)
-                # why? a = queue.pop(0)만 하면 되는거 아닌가???? but 이것만 a = 이라고하면 a를 알수없다고함...ㅠㅠㅠㅠ
-                # queue가 하나들어있을 때, 그것이 마지막 피자가 된다.
-                break  # 그래서 while문을 빠져나감
+                break  # 그래서 while문을 빠져나감 (queue가 하나 남아있지만, while문을 빠져나가야하니깐! why? len(queue)가 0이 되려면 계속 돌기때문!)
             else:
-                queue[i][1] = queue[i][1] // 2
+                queue[0][1] = queue[0][1] // 2
                 queue.append(queue.pop(0))
         else:
             if len(pizza_ls) == 0:
-                a = queue.pop(0)
-                # 이것만 a = queue.pop(0)하면 10개 중 8개 맞음 why?
-                # why? 여기에도 a = 이라고 붙여야하는가? a = queue.pop(0)인가
+                a = queue.pop(0)  # 마지막에 [[5, 1][4, 1]] 인 경우에 [[4, 1]]로 된 후, 이는 [4, 0]이 되니까 그냥 pop되어서 사라진다. 이를 막기 위해 a = queue.pop(0)이라고 설정
             elif len(pizza_ls) != 0:
                 queue.pop(0)
                 queue.append(pizza_ls.pop(0))

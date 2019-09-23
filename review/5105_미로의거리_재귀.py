@@ -1,6 +1,6 @@
 near = [(-1, 0), (0, 1), (1, 0), (0, -1)]
 
-def bfs(a, b, cnt = 0):
+def bfs(a, b, cnt):
     global answer
     while queue:
         x, y, result = queue.pop(0)
@@ -12,8 +12,10 @@ def bfs(a, b, cnt = 0):
                     board[xi][yi] = 1
                     bfs(xi, yi, result + 1)
                 elif board[xi][yi] == 3:
+                    rs.append(result)
                     # 3-1 도달하면 break -> 이것을 flag로 제어
                     return result
+                # break
         return 0
 
 
@@ -23,10 +25,13 @@ for t in range(int(input())):
     flag = 0
     answer = 0
     queue = []
+    rs=[]
+    path = 0
 
     for i in range(N):
         for j in range(N):
             if board[i][j] == 2:
-                rs = bfs(i, j)
+                queue.append((i, j, 0))
+                bfs(i, j, path)
 
     print(rs)

@@ -2,11 +2,10 @@ for t in range(int(input())):
     N = int(input())
     board = [list(map(int, input().split())) for _ in range(N)]
 
+    total = []
     near = [(1, 0), (0, 1)]
     rs = board[0][0]
     stack = [(0, 0, rs)]
-    total = []
-
     while stack:
         x, y, result = stack.pop()
         if x == N - 1 and y == N - 1:
