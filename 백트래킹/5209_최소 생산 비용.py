@@ -31,10 +31,10 @@ def dfs(x, sum):
     for n in range(N):
         if not visit[n]:
             visit[n] = True
-            print(visit)
+            # print(visit)
             dfs(x + 1, sum + board[x][n])
-            visit[n] = False  # 끝까지 내려간 다음에?????????????????어떻게 [T, T, T]가 된 후, 밑에거부터 F로 바꿀 수 있는지?
-            print(visit)
+            visit[n] = False
+            # print(visit)
 
 for t in range(int(input())):
     N = int(input())

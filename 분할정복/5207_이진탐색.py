@@ -15,7 +15,7 @@ def binary(arr, start, end, target):
 '''
 
 
-def binary_re(arr, target, start, end, place=0):
+def binary_re(arr, target, start, end, place=0):  # place는 방향 -> 처음들어올때는 방향 없음
 # 이때 place는 왼쪽 구간은 l부터 m-1, 오른쪽 구간은 m+1부터 r이 된다. 라는 조건을 충족하기 위해!
     global cnt
 
@@ -25,8 +25,10 @@ def binary_re(arr, target, start, end, place=0):
         cnt += 1
         return True
     elif mid < target and (place=='start' or not place):
+    # place=='start': mid가 target보다 작다면 왼쪽에서 오른쪽으로가야하고, 처음 들어온 값이 아니라면
         binary_re(arr, target, m + 1, end, 'end')
     elif mid > target and (place == 'end' or not place):
+        # place=='end': mid가 target보다 크다면 오른쪽에서 왼쪽으로가야하고, 처음 들어온 값이 아니라면
         binary_re(arr, target, start, m - 1, 'start')
 
 
