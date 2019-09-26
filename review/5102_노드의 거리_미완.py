@@ -19,3 +19,4 @@ for t in range(int(input())):
         if node not in visit: # visit에 1이 없다면
             visit.append(node)  # visit = [1]
             queue.append(adj[node])
+

@@ -14,7 +14,7 @@ def bfs(a, b, cnt):
                 elif board[xi][yi] == 3:
                     rs.append(result)
                     # 3-1 도달하면 break -> 이것을 flag로 제어
-                    return result
+                    return rs
                 # break
         return 0
 
