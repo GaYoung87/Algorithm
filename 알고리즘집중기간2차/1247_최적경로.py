@@ -1,18 +1,25 @@
-def func(arr):
+
+# 1. 조합
+#     1-1. 조합 하나가 구성되었을 때, 그에 따른 dis 구함
+# 2. 백트레킹 mymin vs dis
+
+def func(dis, cnt):
     global mymin
 
-    if mymin < sum:
+    if mymin < sum:  # 백트래킹
         return
 
-    elif
+    elif cnt == N:  # 만약 data갯수만큼 하나하나 1~4개까지 하고싶다면, for문 돌리기!
+        # result.append(arr)
+        # return result
 
-    if len(arr) == N:  # 만약 data갯수만큼 하나하나 1~4개까지 하고싶다면, for문 돌리기!
-        result.append(arr)
-        return result
     else:
-        for idx in range(len(data)):
-            if visit[idx]:
-                continue
+        for idx in range(2, N + 2):
+            if visit[idx] == False:
+                visit[idx] = True
+                x, y = dis[i]
+                
+
             elif visit[idx] == False:
                 visit[idx] = True
                 perm(arr + [data[idx]])
