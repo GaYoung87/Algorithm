@@ -26,4 +26,4 @@ for t in range(int(input())):
 
     cnt = game(0, 0, 0)  # return rs
 
-    print(cnt)
+    print('#{} {}'.format(t+1, cnt))
