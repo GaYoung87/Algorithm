@@ -39,3 +39,6 @@ for menu, cnt in check.items():  # key, value 한번에 다뽑고싶으면 .itme
     if cnt >= 2:
         answer.append(menu)
 print(answer)
+
+
+# 문제점: BC:2, BCF:2, BCFG: 2 -> BCFG만 최종적으로 선택되어야함
