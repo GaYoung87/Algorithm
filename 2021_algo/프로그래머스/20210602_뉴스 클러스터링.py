@@ -28,15 +28,14 @@ def solution(str1, str2):
 
     else:
         gyo = []
-            
         if len(first_ls) > len(second_ls):
-            if len(second_ls) != 0:
-                for i in second_ls:
+            for i in second_ls:
+                if i in first_ls:  # 중복이 된다면, 교집합 리스트에 넣고, 한번 제거해준다.
                     gyo.append(i)
                     first_ls.remove(i)
         else:
-            if len(first_ls) != 0:
-                for i in first_ls:
+            for i in first_ls:
+                if i in second_ls:
                     gyo.append(i)
                     second_ls.remove(i)
 
