@@ -51,6 +51,5 @@ for _ in range(4):
     for i in range(end):
         for j in range(end):
             if check(i, j, start, end, board, key, lock):
-                return True
-
+                print('yes')
     rotated_key = rotation(key)
