@@ -8,20 +8,20 @@ def solution(orders, course):
         for menu in orders:
             menu_li = list(''.join(menu))
             for li in combinations(menu_li, c):
-                res = ''.join(li)
-                if res not in candidates:
-                    candidates.append(res)
+                res = ''.join(sorted(li))  # 여기서 정렬안해주면, XW, WX를 다른것으로 인식함
+                if res not in new_menu:
+                    new_menu[res] = 1
                 else:
-                    if res not in new_menu.keys():
-                        new_menu[res] = 2
-                    else:
-                        new_menu[res] += 1
+                    new_menu[res] += 1
         sort_menu = sorted(new_menu.items(), reverse=True, key=lambda x: x[1])
 
-        mymax = sort_menu[0][1]
-        for i in sort_menu:
-            if i[1] == mymax:
-                answer.append(i[0])
+        if len(sort_menu):  # sort_menu = []일 수 있음
+            mymax = sort_menu[0][1]
+
+            if mymax > 1:
+                for i in sort_menu:
+                    if i[1] == mymax:
+                        answer.append(i[0])
 
     answer = sorted(answer)
 
