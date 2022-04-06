@@ -28,7 +28,7 @@ def solution(key, lock):
     for i in range(len_lock):
         for j in range(len_lock):
             board[len_key + i][len_key + j] += lock[i][j]
-    # pprint(board)
+    pprint(board)
 
     for time in range(4):  # 1번 key로 처음부터끝까지 돌리고, 2번key로 처음부터끝까지 돌리고..
         # board에 key 하나씩 넣어보기
@@ -50,3 +50,5 @@ def solution(key, lock):
         key = rotation(key)
 
     return False
+
+print(solution(key, lock))
