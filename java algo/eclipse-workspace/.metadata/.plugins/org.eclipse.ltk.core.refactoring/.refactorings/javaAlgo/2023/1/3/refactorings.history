@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;src.javaAlgo.옹알이.java&apos; to &apos;Solution01.java&apos;&#x0D;&#x0A;- Original project: &apos;javaAlgo&apos;&#x0D;&#x0A;- Original element: &apos;src.javaAlgo.옹알이.java&apos;&#x0D;&#x0A;- Renamed element: &apos;src.javaAlgo.Solution01.java&apos;" description="Rename compilation unit &apos;옹알이.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/&lt;src.javaAlgo{옹알이.java" name="Solution01.java" references="false" stamp="1673971027391" version="1.0"/>
+</session>

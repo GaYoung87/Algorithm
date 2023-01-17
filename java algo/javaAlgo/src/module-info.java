@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author YoonGayoung
- *
- */
-module javaAlgo {
-}
