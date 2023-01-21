@@ -1,4 +1,4 @@
-public class Solution_20230117 {  // 다음에 올 숫자
+public class Solution_20230117_다음에올숫자 {  // 다음에 올 숫자
 
     public int solution(int[] common) {
         int answer = 0;

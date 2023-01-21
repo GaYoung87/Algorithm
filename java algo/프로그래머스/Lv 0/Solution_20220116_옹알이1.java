@@ -1,4 +1,4 @@
-public class Solution_20220116 {  // 옹알이(1)
+public class Solution_20220116_옹알이1 {  // 옹알이(1)
 
     String[] speakList = {"aya", "ye", "woo", "ma"};
 

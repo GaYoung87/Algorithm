@@ -1,4 +1,4 @@
-public class Solution_20230118 {  // 세균 증식
+public class Solution_20230118_세균증식 {  // 세균증식
 
     public int solution(int n, int t) {
 
