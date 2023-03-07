@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Solution_20230305_10798_세로읽기 {
+public class Solution_20230306_10798_세로읽기 {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
