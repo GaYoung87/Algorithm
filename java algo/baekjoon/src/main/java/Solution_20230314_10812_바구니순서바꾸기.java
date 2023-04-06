@@ -6,6 +6,8 @@ public class Solution_20230314_10812_바구니순서바꾸기 {
 
         /**
          * 10 5   -> 1 2 3 4 5 6 7 8 9 10
+         *              [8 9 3 4 5 6 7]
+         * 3 9 8  -> 1 2 8 9 3 4 5 6 7 10
          *          [4 5 6 1 2 3]
          * 1 6 4  -> 4 5 6 1 2 3 7 8 9 10
          *              [8 9 3 4 5 6 7]
@@ -30,26 +32,31 @@ public class Solution_20230314_10812_바구니순서바꾸기 {
          * new_array를 mid~end~start 기준으로 array로부터 값을 가지고와서 바꾼다.
          * mid~end, start~mid로 나눠서 바꿔준다.
          */
-
-
         for (int i=0; i<m; i++) {
             int start = in.nextInt()-1;
             int end = in.nextInt()-1;
             int mid = in.nextInt()-1;
 
+            //          [4 5 6 1 2 3]
+            // 1 6 4  -> 4 5 6 1 2 3 7 8 9 10
+            //              [8 9 3 4 5 6 7]
+            // 3 9 8  -> 1 2 8 9 3 4 5 6 7 10
             // mid ~ end
             int k = 0;
             for (int j = mid; j<end+1; j++) {
-                new_array[j-mid] = array[mid+k];
+                new_array[j-mid+start] = array[mid+k];
                 k++;
             }
 
             // start ~ end
-            int z = 0;
-            0 1 2 3
-            for (int j = start; j<mid+1; j++) {
-                new_array[j+mid] = array[mid+j-start+z];
-                z++;
+            //          [4 5 6 1 2 3]
+            // 1 6 4  -> 4 5 6 1 2 3 7 8 9 10
+            //              [8 9 3 4 5 6 7]
+            // 3 9 8  -> 1 2 8 9 3 4 5 6 7 10
+//            int z = 0;
+            for (int j = start; j<mid; j++) {
+                new_array[j+mid] = array[j];
+//                z++;
             }
 
 
