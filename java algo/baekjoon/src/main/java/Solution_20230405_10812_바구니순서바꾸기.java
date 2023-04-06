@@ -25,28 +25,32 @@ public class Solution_20230405_10812_바구니순서바꾸기 {
          * 1 3 3  -> 1 4 6 2 3 7 10 5 8 9
          * 2 6 2  -> 1 4 6 2 3 7 10 5 8 9
          */
-        for (int i=0; i<m; i++) {
+
+        for (int i = 0; i < m; i++) {
             int start = in.nextInt() - 1;
             int end = in.nextInt() - 1;
             int mid = in.nextInt() - 1;
 
-            // mid~end
-            for (int x=mid; x<=end; x++) {
-                new_array[x-mid] = array[x];
+            // start~end까지 돌면서
+            // end가 넘지 않으면(mid+x<=end) 되면, array의 mid~end를 new_array의 start~mid까지 넣고
+            // 넘는다면, array의 start~mid를 new_array의 mid~end로 넣어주기
+            int idx = start;
+            for (int x = 0; x < end - start + 1; x++) {
+                if (mid + x <= end) {
+                    new_array[start + x] = array[mid + x];
+                } else {
+                    new_array[start + x] = array[idx];
+                    idx++;
+                }
             }
 
-            // start~mid
-            for (int x=start; x<mid; x++) {
-                new_array[x+mid] = array[x];
-            }
-
-            array = new_array;
-
-            for (int a: array) {
-                System.out.print( a + " ");
+            for (int a = 0; a < n; a++) {
+                array[a] = new_array[a];
             }
         }
 
-
+        for (int a : array) {
+            System.out.print(a + " ");
+        }
     }
 }
