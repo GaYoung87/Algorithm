@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Solution_20230406_2745_진법변환 {
+public class Solution_20230410_수학은비대면강의입니다 {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
