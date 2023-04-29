@@ -35,14 +35,46 @@ public class Solution_20230427_5430_AC {
                 }
             }
 
+            StringBuilder sb = new StringBuilder("[");
             // RDD -> ['R','D','D']
             for (char w : word.toCharArray()) {
+
+                // 기본 : 1, 2, 3, 4
+                // 1, 2, 3, 4 + reverse=false -> 앞에값 빼기
+                // 1, 2, 3, 4 + reverse=true -> 뒤에값 빼기
+                boolean reverse = false;
                 if (w == 'R') {
+                    reverse = !reverse;
 
+                } else {  // D
+                    if (dq.isEmpty()) {
+                        System.out.println("error");
+                        break;
+                    } else {
+                        if (reverse) {
+                            dq.pollLast();
+                        } else {
+                            dq.pollFirst();
+                        }
+                    }
                 }
+
+
+                while (!dq.isEmpty()) {
+                    if (reverse) {
+                        sb.append(dq.removeLast());
+                    } else {
+                        sb.append(dq.removeFirst());
+                    }
+
+                    if (dq.size() != 0) {
+                        sb.append(',');
+                    }
+                }
+                sb.append(']');
+
             }
-
-
+            System.out.println(sb);
         }
 
     }
