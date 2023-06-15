@@ -35,11 +35,7 @@ def solution(plans):
 
         # 시간 안에 과제 못끝냄 -> remain_name에 넣기
         else:
-
-
-
-
-
+            pass
 
 
     return answer
